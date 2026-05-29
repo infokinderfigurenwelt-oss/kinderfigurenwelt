@@ -18,9 +18,7 @@
   --dark:   #2C1654;
   --white:  #FFFFFF;
 }
-
 * { margin:0; padding:0; box-sizing:border-box; }
-
 body {
   font-family: 'Nunito', sans-serif;
   background: #FFF5F9;
@@ -28,8 +26,6 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 }
-
-/* RAINBOW BAR */
 .rainbow-bar {
   height: 10px;
   background: linear-gradient(90deg,
@@ -38,8 +34,6 @@ body {
     #1dd4f7 57.1% 71.4%, var(--blue) 71.4% 85.7%,
     var(--purple) 85.7% 100%);
 }
-
-/* HERO HEADER */
 .hero {
   background: linear-gradient(170deg, #FDE8F0 0%, #F0E8FF 60%, #E8F4FF 100%);
   text-align: center;
@@ -60,7 +54,6 @@ body {
   from { transform: scale(1); opacity: 0.5; }
   to   { transform: scale(1.15); opacity: 1; }
 }
-
 .logo-img {
   width: clamp(180px, 45vw, 280px);
   height: auto;
@@ -72,7 +65,16 @@ body {
   0%,100% { transform: translateY(0); }
   50%      { transform: translateY(-8px); }
 }
-
+.logo-fallback {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  background: linear-gradient(135deg, #E8352A, #F7941D, #7B4FC4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: none;
+  margin-bottom: 8px;
+}
 .hero h1 {
   font-family: 'Fredoka One', cursive;
   font-size: clamp(1.6rem, 5vw, 2.6rem);
@@ -82,15 +84,12 @@ body {
   position: relative; z-index: 1;
 }
 .hero h1 span { color: var(--red); }
-
 .hero-sub {
   font-size: 1rem;
   color: #6a4090;
   margin-top: 8px;
   position: relative; z-index: 1;
 }
-
-/* TRUST BADGES */
 .badges {
   display: flex;
   justify-content: center;
@@ -111,15 +110,11 @@ body {
   display: flex; align-items: center; gap: 6px;
   box-shadow: 0 2px 10px rgba(245,168,200,0.2);
 }
-
-/* MAIN LAYOUT */
 .main {
   max-width: 780px;
   margin: 0 auto;
   padding: 36px 20px 60px;
 }
-
-/* WHATSAPP CTA — TOP */
 .wa-cta {
   background: linear-gradient(135deg, #25D366, #128C7E);
   border-radius: 24px;
@@ -133,218 +128,112 @@ body {
   0%,100% { box-shadow: 0 8px 28px rgba(37,211,102,0.3); }
   50%      { box-shadow: 0 12px 40px rgba(37,211,102,0.55); }
 }
-.wa-cta p {
-  color: rgba(255,255,255,0.9);
-  font-size: 0.95rem;
-  margin-bottom: 14px;
-}
-.wa-cta strong { color: #fff; font-size: 1.1rem; display: block; margin-bottom: 6px; font-family: 'Fredoka One', cursive; font-size: 1.3rem; }
+.wa-cta p { color: rgba(255,255,255,0.9); font-size: 0.95rem; margin-bottom: 14px; }
+.wa-cta strong { color: #fff; display: block; margin-bottom: 6px; font-family: 'Fredoka One', cursive; font-size: 1.3rem; }
 .btn-wa {
   display: inline-flex; align-items: center; gap: 10px;
-  background: #fff;
-  color: #128C7E;
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.1rem;
-  padding: 14px 32px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
+  background: #fff; color: #128C7E;
+  font-family: 'Fredoka One', cursive; font-size: 1.1rem;
+  padding: 14px 32px; border-radius: 50px; text-decoration: none;
   transition: transform .2s, box-shadow .2s;
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
-.btn-wa:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-.wa-icon { font-size: 1.4rem; }
-
-/* DIVIDER */
+.btn-wa:hover { transform: translateY(-3px) scale(1.03); }
 .or-divider {
   display: flex; align-items: center; gap: 14px;
-  margin: 8px 0 28px;
-  color: #a080c0;
-  font-weight: 800;
-  font-size: 0.9rem;
+  margin: 8px 0 28px; color: #a080c0; font-weight: 800; font-size: 0.9rem;
 }
 .or-divider::before, .or-divider::after {
-  content: '';
-  flex: 1;
-  height: 2px;
-  background: var(--pink);
-  border-radius: 2px;
+  content: ''; flex: 1; height: 2px; background: var(--pink); border-radius: 2px;
 }
-
-/* FORM CARD */
 .form-card {
-  background: var(--white);
-  border-radius: 28px;
-  padding: 36px 32px;
-  box-shadow: 0 6px 32px rgba(245,168,200,0.22);
-  border: 2.5px solid var(--pink);
+  background: var(--white); border-radius: 28px; padding: 36px 32px;
+  box-shadow: 0 6px 32px rgba(245,168,200,0.22); border: 2.5px solid var(--pink);
 }
-
-.form-card h2 {
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.55rem;
-  color: var(--purple);
-  margin-bottom: 6px;
-}
-.form-card .form-sub {
-  font-size: 0.92rem;
-  color: #7a5090;
-  margin-bottom: 28px;
-}
-
-/* FORM ELEMENTS */
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
+.form-card h2 { font-family: 'Fredoka One', cursive; font-size: 1.55rem; color: var(--purple); margin-bottom: 6px; }
+.form-card .form-sub { font-size: 0.92rem; color: #7a5090; margin-bottom: 28px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media(max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
-}
-.field label {
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: var(--purple);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.field label { font-size: 0.88rem; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.06em; }
 .field input, .field select, .field textarea {
-  padding: 13px 16px;
-  border: 2px solid var(--pink);
-  border-radius: 14px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.97rem;
-  color: var(--dark);
-  background: #FFF9FC;
-  outline: none;
-  transition: border-color .2s, box-shadow .2s;
-  width: 100%;
+  padding: 13px 16px; border: 2px solid var(--pink); border-radius: 14px;
+  font-family: 'Nunito', sans-serif; font-size: 0.97rem; color: var(--dark);
+  background: #FFF9FC; outline: none; transition: border-color .2s, box-shadow .2s; width: 100%;
 }
 .field input:focus, .field select:focus, .field textarea:focus {
-  border-color: var(--purple);
-  box-shadow: 0 0 0 4px rgba(123,79,196,0.1);
-  background: #fff;
+  border-color: var(--purple); box-shadow: 0 0 0 4px rgba(123,79,196,0.1); background: #fff;
 }
 .field textarea { resize: vertical; min-height: 90px; }
 .field select { cursor: pointer; }
 
-/* EVENT TYPE PILLS */
-.pill-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 18px;
+/* MASCOT GROUP */
+.mascot-group { margin-bottom: 18px; }
+.mascot-group-label { font-size: 0.88rem; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; display: block; }
+.mascot-category { margin-bottom: 14px; }
+.mascot-category-title { font-size: 0.82rem; font-weight: 800; color: var(--orange); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: block; }
+.mascot-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.mpill {
+  display: flex; align-items: center; gap: 6px;
+  background: #FFF0F9; border: 2px solid var(--pink);
+  border-radius: 50px; padding: 7px 14px;
+  font-size: 0.85rem; font-weight: 700; color: var(--dark);
+  cursor: pointer; transition: all .18s; user-select: none;
 }
-.pill-label {
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: var(--purple);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  width: 100%;
-  margin-bottom: 2px;
-}
+.mpill input[type=checkbox] { display: none; }
+.mpill:hover { background: var(--pink2); border-color: var(--purple); }
+.mpill.active { background: var(--purple); color: #fff; border-color: var(--purple); }
+
+.pill-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.pill-label { font-size: 0.88rem; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 0.06em; width: 100%; margin-bottom: 2px; }
 .pill {
   display: flex; align-items: center; gap: 6px;
-  background: #FFF0F9;
-  border: 2px solid var(--pink);
-  border-radius: 50px;
-  padding: 8px 16px;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--dark);
-  cursor: pointer;
-  transition: all .18s;
-  user-select: none;
+  background: #FFF0F9; border: 2px solid var(--pink);
+  border-radius: 50px; padding: 8px 16px;
+  font-size: 0.88rem; font-weight: 700; color: var(--dark);
+  cursor: pointer; transition: all .18s; user-select: none;
 }
 .pill input[type=checkbox] { display: none; }
 .pill:hover { background: var(--pink2); border-color: var(--purple); }
 .pill.active { background: var(--purple); color: #fff; border-color: var(--purple); }
 
-/* SUBMIT */
 .btn-submit {
-  width: 100%;
-  padding: 16px;
+  width: 100%; padding: 16px;
   background: linear-gradient(135deg, var(--red), var(--orange), var(--yellow));
-  color: #fff;
-  border: none;
-  border-radius: 18px;
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform .2s, box-shadow .2s;
-  box-shadow: 0 6px 24px rgba(232,53,42,0.3);
-  margin-top: 8px;
+  color: #fff; border: none; border-radius: 18px;
+  font-family: 'Fredoka One', cursive; font-size: 1.2rem;
+  cursor: pointer; transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 6px 24px rgba(232,53,42,0.3); margin-top: 8px;
   display: flex; align-items: center; justify-content: center; gap: 10px;
 }
 .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(232,53,42,0.4); }
-.btn-submit:active { transform: scale(0.98); }
 
-/* SUCCESS STATE */
-.success-msg {
-  display: none;
-  text-align: center;
-  padding: 40px 20px;
-  animation: fadeUp .5s ease;
-}
+.success-msg { display: none; text-align: center; padding: 40px 20px; animation: fadeUp .5s ease; }
 .success-msg .big-emoji { font-size: 4rem; display: block; margin-bottom: 16px; animation: bounce 1s ease-in-out infinite; }
 @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
 .success-msg h3 { font-family: 'Fredoka One', cursive; font-size: 1.8rem; color: var(--purple); margin-bottom: 10px; }
 .success-msg p { color: #6a4090; font-size: 1rem; margin-bottom: 24px; }
 .btn-wa-success {
   display: inline-flex; align-items: center; gap: 8px;
-  background: #25D366; color: #fff;
-  padding: 14px 28px; border-radius: 50px;
-  font-family: 'Fredoka One', cursive; font-size: 1rem;
-  text-decoration: none;
-  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  background: #25D366; color: #fff; padding: 14px 28px; border-radius: 50px;
+  font-family: 'Fredoka One', cursive; font-size: 1rem; text-decoration: none;
 }
 
-/* SOCIAL PROOF */
-.proof {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  margin-top: 32px;
-}
+.proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 32px; }
 .proof-item {
-  background: var(--white);
-  border: 2px solid var(--pink);
-  border-radius: 18px;
-  padding: 20px 16px;
-  text-align: center;
+  background: var(--white); border: 2px solid var(--pink);
+  border-radius: 18px; padding: 20px 16px; text-align: center;
   box-shadow: 0 3px 12px rgba(245,168,200,0.15);
 }
-.proof-item .num {
-  font-family: 'Fredoka One', cursive;
-  font-size: 2rem;
-  color: var(--red);
-  display: block;
-}
-.proof-item .lbl {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #7a5090;
-  margin-top: 4px;
-}
+.proof-item .num { font-family: 'Fredoka One', cursive; font-size: 2rem; color: var(--red); display: block; }
+.proof-item .lbl { font-size: 0.82rem; font-weight: 700; color: #7a5090; margin-top: 4px; }
 
-/* FOOTER */
 footer {
-  text-align: center;
-  padding: 24px;
-  font-size: 0.82rem;
-  color: #a080c0;
-  border-top: 2px solid var(--pink);
-  margin-top: 8px;
+  text-align: center; padding: 24px; font-size: 0.82rem;
+  color: #a080c0; border-top: 2px solid var(--pink); margin-top: 8px;
 }
 footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
 
-/* FADE IN */
 .fi { opacity:0; transform:translateY(24px); animation: fadeUp .6s ease forwards; }
 @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 .d1{animation-delay:.05s} .d2{animation-delay:.15s} .d3{animation-delay:.25s} .d4{animation-delay:.35s}
@@ -354,14 +243,14 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
 
 <div class="rainbow-bar"></div>
 
-<!-- HERO -->
 <div class="hero fi">
-  <img class="logo-img" src="logo-kinderfigurenwelt.png" alt="KinderfigurenWelt">
+  <div class="logo-fallback" id="logoFallback">🧸 KinderfigurenWelt</div>
+  <img class="logo-img" id="logoImg" src="logo.png" alt="KinderfigurenWelt"
+    onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'">
   <h1>Magie für dein Event <span>bestellen</span> 🌟</h1>
   <p class="hero-sub">Jetzt anfragen — kostenlos &amp; unverbindlich!</p>
 </div>
 
-<!-- TRUST BADGES -->
 <div class="badges fi d1">
   <span class="badge">✅ Kostenlose Anfrage</span>
   <span class="badge">⚡ Antwort in 24h</span>
@@ -371,25 +260,22 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
 
 <div class="main">
 
-  <!-- WHATSAPP FAST TRACK -->
   <div class="wa-cta fi d1">
     <strong>💬 Schnell anfragen via WhatsApp</strong>
     <p>Schreib uns direkt — wir antworten persönlich &amp; schnell!</p>
     <a class="btn-wa" href="https://wa.me/41797110784?text=Hallo%20KinderfigurenWelt!%20Ich%20m%C3%B6chte%20eine%20Anfrage%20stellen%20%F0%9F%8E%89" target="_blank">
-      <span class="wa-icon">💬</span> WhatsApp schreiben
+      <span>💬</span> WhatsApp schreiben
     </a>
   </div>
 
   <div class="or-divider fi d2">✨ oder Formular ausfüllen ✨</div>
 
-  <!-- FORM CARD -->
   <div class="form-card fi d3" id="formCard">
     <h2>📋 Deine Anfrage</h2>
     <p class="form-sub">Füll das Formular aus — wir melden uns so schnell wie möglich bei dir! 🌈</p>
 
     <form id="leadForm" novalidate>
 
-      <!-- NAME + PHONE -->
       <div class="form-row">
         <div class="field">
           <label>👤 Dein Name *</label>
@@ -401,39 +287,22 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
         </div>
       </div>
 
-      <!-- EMAIL -->
       <div class="field">
         <label>📧 E-Mail</label>
         <input type="email" id="email" placeholder="deine@email.ch">
       </div>
 
-      <!-- EVENT TYPE PILLS -->
       <div class="pill-group">
         <span class="pill-label">🎉 Art des Events *</span>
-        <label class="pill" onclick="togglePill(this)">
-          <input type="checkbox" value="Kindergeburtstag"> 🎂 Kindergeburtstag
-        </label>
-        <label class="pill" onclick="togglePill(this)">
-          <input type="checkbox" value="Firmenevent"> 🏬 Firmenevent
-        </label>
-        <label class="pill" onclick="togglePill(this)">
-          <input type="checkbox" value="Einkaufszentrum"> 🛍️ Einkaufszentrum
-        </label>
-        <label class="pill" onclick="togglePill(this)">
-          <input type="checkbox" value="Hotel"> 🏨 Hotel
-        </label>
-        <label class="pill" onclick="togglePill(this)">
-          <input type="checkbox" value="Kinder Disco"> 🎶 Kinder Disco
-        </label>
-        <label class="pill" onclick="togglePill(this)">
-          <input type="checkbox" value="Messe/Fiera"> 🎪 Messe / Fiera
-        </label>
-        <label class="pill" onclick="togglePill(this)">
-          <input type="checkbox" value="Anderes"> ✨ Anderes
-        </label>
+        <label class="pill" onclick="togglePill(this)"><input type="checkbox" value="Kindergeburtstag"> 🎂 Kindergeburtstag</label>
+        <label class="pill" onclick="togglePill(this)"><input type="checkbox" value="Firmenevent"> 🏬 Firmenevent</label>
+        <label class="pill" onclick="togglePill(this)"><input type="checkbox" value="Einkaufszentrum"> 🛍️ Einkaufszentrum</label>
+        <label class="pill" onclick="togglePill(this)"><input type="checkbox" value="Hotel"> 🏨 Hotel</label>
+        <label class="pill" onclick="togglePill(this)"><input type="checkbox" value="Kinder Disco"> 🎶 Kinder Disco</label>
+        <label class="pill" onclick="togglePill(this)"><input type="checkbox" value="Messe"> 🎪 Messe</label>
+        <label class="pill" onclick="togglePill(this)"><input type="checkbox" value="Anderes"> ✨ Anderes</label>
       </div>
 
-      <!-- DATE + LOCATION -->
       <div class="form-row">
         <div class="field">
           <label>📅 Datum des Events *</label>
@@ -445,30 +314,53 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
         </div>
       </div>
 
-      <!-- MASCOT -->
-      <div class="field">
-        <label>🎭 Gewünschte Maskottchen</label>
-        <select id="mascot">
-          <option value="">-- Bitte wählen --</option>
-          <option>🐺 Mascha &amp; der Bär</option>
-          <option>🐾 Paw Patrol (Chase, Marshall, Skye…)</option>
-          <option>🐷 Peppa Pig &amp; George</option>
-          <option>🦸 Superhelden</option>
-          <option>🧚 Prinzessin</option>
-          <option>🦄 Einhorn</option>
-          <option>🎅 Weihnachtsmann</option>
-          <option>🐰 Osterhase</option>
-          <option>Überraschung / Egal</option>
-        </select>
+      <!-- MASCOT SELECTION -->
+      <div class="mascot-group">
+        <span class="mascot-group-label">🎭 Gewünschte Maskottchen</span>
+
+        <div class="mascot-category">
+          <span class="mascot-category-title">💙 Stitch</span>
+          <div class="mascot-pills">
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Stitch (Einzel)"> 💙 Stitch</label>
+          </div>
+        </div>
+
+        <div class="mascot-category">
+          <span class="mascot-category-title">🐾 Paw Patrol</span>
+          <div class="mascot-pills">
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Chase (Einzel)"> 💙 Chase</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Marshall (Einzel)"> ❤️ Marshall</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Skye (Einzel)"> 💖 Skye</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Chase & Marshall (Duo)"> 💙❤️ Chase & Marshall</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Chase & Skye (Duo)"> 💙💖 Chase & Skye</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Marshall & Skye (Duo)"> ❤️💖 Marshall & Skye</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Chase, Marshall & Skye (Trio)"> 🐾 Trio</label>
+          </div>
+        </div>
+
+        <div class="mascot-category">
+          <span class="mascot-category-title">🌸 Mascha & Der Bär</span>
+          <div class="mascot-pills">
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Mascha (Einzel)"> 🌸 Mascha</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Der Bär (Einzel)"> 🐻 Der Bär</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Mascha & Der Bär (Duo)"> 🌸🐻 Duo</label>
+          </div>
+        </div>
+
+        <div class="mascot-category">
+          <span class="mascot-category-title">🐷 Peppa Wutz</span>
+          <div class="mascot-pills">
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Peppa Wutz (Einzel)"> 🐷 Peppa Wutz</label>
+            <label class="mpill" onclick="togglePill(this)"><input type="checkbox" value="Peppa & George (Duo)"> 🐷🐽 Peppa & George</label>
+          </div>
+        </div>
       </div>
 
-      <!-- MESSAGE -->
       <div class="field">
         <label>💬 Nachricht / Details</label>
         <textarea id="message" placeholder="Alter des Kindes, Anzahl Gäste, besondere Wünsche..."></textarea>
       </div>
 
-      <!-- HOW DID YOU FIND US -->
       <div class="field">
         <label>🔍 Wie hast du uns gefunden?</label>
         <select id="source">
@@ -488,24 +380,22 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
       </button>
     </form>
 
-    <!-- SUCCESS -->
     <div class="success-msg" id="successMsg">
       <span class="big-emoji">🎉</span>
       <h3>Anfrage gesendet!</h3>
-      <p>Danke <strong id="successName"></strong>! Wir melden uns bald bei dir. <br>Oder schreib uns direkt auf WhatsApp für eine schnellere Antwort!</p>
+      <p>Danke <strong id="successName"></strong>! Wir melden uns bald bei dir.<br>Oder schreib uns direkt auf WhatsApp für eine schnellere Antwort!</p>
       <a class="btn-wa-success" href="https://wa.me/41797110784" target="_blank">💬 WhatsApp öffnen</a>
     </div>
   </div>
 
-  <!-- SOCIAL PROOF -->
   <div class="proof fi d4">
     <div class="proof-item">
       <span class="num">100+</span>
-      <span class="lbl">🎉 Events animati</span>
+      <span class="lbl">🎉 Events</span>
     </div>
     <div class="proof-item">
       <span class="num">⭐ 5/5</span>
-      <span class="lbl">Bewertung Kunden</span>
+      <span class="lbl">Kundenbewertung</span>
     </div>
     <div class="proof-item">
       <span class="num">24h</span>
@@ -520,22 +410,19 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
 </div>
 
 <footer>
-  © 2025 <a href="#">KinderfigurenWelt</a> · Bern, Schweiz ·
+  © 2026 <a href="#">KinderfigurenWelt</a> · Bern, Schweiz ·
   <a href="mailto:info@kinderfigurenwelt.ch">info@kinderfigurenwelt.ch</a> ·
   <a href="tel:+41797110784">+41 79 711 07 84</a>
 </footer>
 
 <script>
-  // Set min date to today
   const today = new Date().toISOString().split('T')[0];
   document.getElementById('eventDate').min = today;
 
-  // Toggle pills
   function togglePill(el) {
     el.classList.toggle('active');
   }
 
-  // Form submit → build WhatsApp message
   document.getElementById('leadForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -544,7 +431,6 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
     const email    = document.getElementById('email').value.trim();
     const date     = document.getElementById('eventDate').value;
     const location = document.getElementById('location').value.trim();
-    const mascot   = document.getElementById('mascot').value;
     const message  = document.getElementById('message').value.trim();
     const source   = document.getElementById('source').value;
 
@@ -553,11 +439,12 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
       return;
     }
 
-    // Collect selected event types
-    const pills = [...document.querySelectorAll('.pill.active input')].map(i => i.value);
-    const eventTypes = pills.length ? pills.join(', ') : 'Nicht angegeben';
+    const eventPills = [...document.querySelectorAll('.pill.active input')].map(i => i.value);
+    const eventTypes = eventPills.length ? eventPills.join(', ') : 'Nicht angegeben';
 
-    // Build WhatsApp message
+    const mascotPills = [...document.querySelectorAll('.mpill.active input')].map(i => i.value);
+    const mascots = mascotPills.length ? mascotPills.join(', ') : 'Keine Angabe';
+
     const waText = `🌟 *Neue Anfrage – KinderfigurenWelt*
 
 👤 *Name:* ${name}
@@ -567,7 +454,7 @@ footer a { color: var(--purple); text-decoration: none; font-weight: 700; }
 🎉 *Event:* ${eventTypes}
 📅 *Datum:* ${date}
 📍 *Ort:* ${location}
-🎭 *Maskottchen:* ${mascot || 'Keine Angabe'}
+🎭 *Maskottchen:* ${mascots}
 
 💬 *Nachricht:*
 ${message || 'Keine weiteren Details'}
@@ -576,13 +463,10 @@ ${message || 'Keine weiteren Details'}
 
     const waUrl = `https://wa.me/41797110784?text=${encodeURIComponent(waText)}`;
 
-    // Show success
     document.getElementById('leadForm').style.display = 'none';
-    const sMsg = document.getElementById('successMsg');
-    sMsg.style.display = 'block';
+    document.getElementById('successMsg').style.display = 'block';
     document.getElementById('successName').textContent = name.split(' ')[0];
 
-    // Open WhatsApp after short delay
     setTimeout(() => { window.open(waUrl, '_blank'); }, 800);
   });
 </script>
